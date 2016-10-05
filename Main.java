@@ -75,7 +75,17 @@ public class Start {
     			Document doc = Jsoup.connect(url+output).get();
     			String fullSite = doc.html();
     			
-    			int index = fullSite.indexOf("Displaying All");
+    			int index = fullSite.indexOf("document.body.style.cursor='wait';");
+    			String shortSite = fullSite.substring(index);
+    			String names[] = shortSite.split("<br>");
+    			
+    			// for some reason formatting is out on the first name in the list
+    			names[1] = " " + names[1];
+    			
+    			for(int i = 1; i<51; i++)
+    			{
+    				System.out.printf("%d. \t%s\n", i, names[i]);
+    			}
     			
     		}catch(Exception e)
     		{
@@ -97,6 +107,7 @@ public class Start {
 	    	
 	    	Scanner in = new Scanner(System.in);
 	    	int choice = in.nextInt();
+	    	System.out.println();
 	    	
 	    	switch(choice)
 	    	{
@@ -109,6 +120,9 @@ public class Start {
 	    		break;
 	    	case 2:
 	    		printData();
+	    		break;
+	    	case 3:
+	    		anagram();
 	    		break;
 	    	case 0:
 	    		finished = true;
