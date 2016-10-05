@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 
-public class Start {
+public class WebScraper {
 	static String username = "";
     static String name = "";
     static String job = "";
