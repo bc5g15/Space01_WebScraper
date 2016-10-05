@@ -24,6 +24,8 @@ public class Start {
             Document doc = Jsoup.connect(url+nameid).get();
 
             username = nameid;
+            //store all the data in an array, so I can check for blanks.
+            String data[] = new String[4];
 
             name = doc.select("[property$=name]").text();
             job = doc.select("[property$=jobtitle").text();
@@ -100,31 +102,18 @@ public class Start {
 	    	{
 	    	System.out.println("[1] Gather data for a given username");
 	    	System.out.println("[2] Print Name, Job Description, Phone number (if found) and email address");
-	    	System.out.println("[3] 50 Name anagrams!");
+	    	System.out.println("[3] (IN PROGRESS) 50 Name anagrams!");
 	    	System.out.println("[0] Quit the program");
 	    	
 	    	Scanner in = new Scanner(System.in);
-	    	
-	    	int choice = 999;
-	    	while(choice==999)
-	    	{
-	    		if(in.hasNextInt())
-	    		{
-	    			choice=in.nextInt();
-	    		}
-	    		else
-	    		{
-	    			System.out.println("Please enter a number!");
-	    			in.nextLine();
-	    		}
-	    	}
+	    	int choice = in.nextInt();
 	    	System.out.println();
 	    	
 	    	switch(choice)
 	    	{
 	    	case 1:
 	    		System.out.printf("Enter an ECS username:\n");
-	    		//This just means we don't pick up any junk from the scanner
+	    		//This just means we don't pick up any junk;
 	    		in.nextLine();
 	    		String ecsName = in.nextLine();
 	    		getData(ecsName);
@@ -149,7 +138,6 @@ public class Start {
 
 
     public static void main(String[] args) {
-	// write your code here
       
         //TODO: Add user input loop for easy use.
         System.out.println("Welcome to the ECS Detail finder!");
