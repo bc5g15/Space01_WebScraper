@@ -24,8 +24,6 @@ public class Start {
             Document doc = Jsoup.connect(url+nameid).get();
 
             username = nameid;
-            //store all the data in an array, so I can check for blanks.
-            String data[] = new String[4];
 
             name = doc.select("[property$=name]").text();
             job = doc.select("[property$=jobtitle").text();
