@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 
 public class WebScraper {
-	static String username = "";
+    static String username = "";
     static String name = "";
     static String job = "";
     static String email = "";
@@ -24,8 +24,6 @@ public class WebScraper {
             Document doc = Jsoup.connect(url+nameid).get();
 
             username = nameid;
-            //store all the data in an array, so I can check for blanks.
-            String data[] = new String[4];
 
             name = doc.select("[property$=name]").text();
             job = doc.select("[property$=jobtitle").text();
