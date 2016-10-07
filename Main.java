@@ -18,6 +18,11 @@ public class Start {
     static String email = "";
     static String phone = "";
 
+    
+    public static void getSecondaryData(String nameid)
+    {
+    	//TODO: Think about adding additional data from the secure.ecs.soton pages.
+    }
 
     public static void getData(String nameid)
     {
