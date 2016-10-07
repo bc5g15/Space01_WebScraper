@@ -21,7 +21,7 @@ public class Start {
     
     public static void getSecondaryData(String nameid)
     {
-    	//TODO: Think about adding additional data from the secure.ecs.soton pages.
+    	//TODO: Think about adding additional data from the secure.ecs.soton/people pages.
     }
 
     public static void getData(String nameid)
